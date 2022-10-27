@@ -50,22 +50,21 @@ public class Events {
             MonsHealth = 200;
             MonDamage = 20;
         }
-        else{
-            MonsterName="Error";
-            MonsHealth=0;
-            MonDamage=0;
+        else {
+            MonsterName = "Error";
+            MonsHealth = 0;
+            MonDamage = 0;
         }
-        Boolean Fight = true;
-        while(Fight)
-        if(health <= 0){
-            System.out.println();
+        while(true) {
 
-            Project.game = false;
-            return;
-        }
-        else if(MonsHealth <= 0){
-
-            return;
+            if (health <= 0) {
+                Project.endtext += "The " + MonsterName + " has defeated you, You are Dead ";
+                Project.game = false;
+                return;
+            } else if (MonsHealth <= 0) {
+                Project.endtext += "You have defeated a " + MonsterName + "You have Won";
+                return;
+            }
         }
     }
 }
