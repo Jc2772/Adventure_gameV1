@@ -6,10 +6,11 @@ public class Project {
     private static int south = 0;
     private static int east = 0;
     private static int west = 0;
+    public static boolean game;
 
     public static void main(String[] args) {
         StringBuilder endtext = new StringBuilder();
-        boolean game = true;
+        game = true;
         Scanner input = new Scanner(System.in);
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
         while (game) {
