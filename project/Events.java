@@ -8,7 +8,7 @@ public class Events {
     private String MonsterName;
     private final Random random = new Random();
     private final Scanner input = new Scanner(System.in);
-    public void Events(){
+    public Events(){
         int eventType = random.nextInt(1,3);
         if(eventType == 1){
             MonsterEvent();

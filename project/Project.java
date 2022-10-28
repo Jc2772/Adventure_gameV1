@@ -1,6 +1,7 @@
 package project;
 import java.util.*;
 
+@SuppressWarnings("ALL")
 public class Project {
     public static int north = 0;
     public static int south = 0;
@@ -15,22 +16,22 @@ public class Project {
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
         while (game) {
             if (north > 3 && east > 3) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else if (south > 3 && west > 3) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else if (north > 6) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else if (south > 6) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else if (east > 6) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else if (west > 6) {
-                endtext += "You got out of the forest";
+                endtext = "You got out of the forest";
                 game = false;
             } else {
                 System.out.print("Enter your next move: ");

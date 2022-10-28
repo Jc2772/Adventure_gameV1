@@ -4,7 +4,7 @@ public class steps {
 
     private static final Random rnd = new Random();
     public steps(String move,int north,int south,int east,int west){
-        if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander")) {
+        if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander") || move.contains("head")) {
             if (move.contains("north") && move.contains("east")) {
                 north++;
                 south--;
@@ -72,12 +72,11 @@ public class steps {
             else{
                 RandomDirection(north,south,east,west);
             }
+            new Events();
         }
         else{
             System.out.println("You start to think about what you want to do in your head, but then you realise you are stuck in a forest so you better not waist your precious time");
         }
-        new Events();
-        return;
     }
     public static void RandomDirection(int north, int south, int east, int west){
         int random_number1 = rnd.nextInt(1,8);
