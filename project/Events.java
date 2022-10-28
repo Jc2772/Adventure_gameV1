@@ -1,8 +1,11 @@
 package project;
 import java.util.*;
 public class Events {
-    private double health = 10.0,weapon = 1,MonDamage,MonsHealth;;
-    private String MonsterName ;
+    private double health = 10;
+    private double weapon = 1;
+    private double MonDamage;
+    private double MonsHealth;
+    private String MonsterName;
     private final Random random = new Random();
     private final Scanner input = new Scanner(System.in);
     public void Events(){
@@ -16,7 +19,6 @@ public class Events {
         else if(eventType == 3){
             LootEvents();
         }
-        return;
     }
     private void MonsterEvent(){
         int Monster = random.nextInt(1,300);
@@ -88,47 +90,87 @@ public class Events {
         switch (eventCode){
             case 1:{
                 System.out.println("as you walk around the forest, you see a deer");
-                return;
+                break;
             }
             case 2:{
                 System.out.println("as you walk around the forest, you see two dwarves wrestling");
-                return;
+                break;
             }
             case 3:{
                 System.out.println("as you walk around the forest, you see the bones of a fallen soldier from the days of old");
-                return;
+                break;
             }
             case 4:{
                 System.out.println("as you walk around the forest, you see a spell circle, a lich is near");
-                return;
+                break;
             }
             case 5:{
                 System.out.println("as you walk around the forest, you see an old campsite");
-                return;
+                break;
             }
             case 6:{
                 System.out.println("as you walk around the forest, you see fairy rings");
-                return;
+                break;
             }
             case 7:{
                 System.out.println("as you walk around the forest, you see an old decayed church");
-                return;
+                break;
             }
             case 8:{
                 System.out.println("as you walk around the forest, you see a man that was recently dead, bandits are near");
-                return;
+                break;
             }
             case 9:{
                 System.out.println("as you walk around the forest, you hear the birds chirping");
-                return;
+                break;
             }
             case 10:{
                 System.out.println("as you walk around the forest, you see a dragon flying high in the sky, \"thank goodness Im hidden in the trees\" you said");
-                return;
+                break;
             }
         }
     }
     private void LootEvents(){
+        int lootchance = random.nextInt(1,10);
+        if(lootchance == 1 && weapon < 5){
+            weapon = 5;
 
+        }
+        else if(lootchance == 2 && weapon < 10){
+            weapon = 10;
+
+        }
+        else if(lootchance == 3 && weapon < 15){
+            weapon = 15;
+
+        }
+        else if(lootchance == 4 && weapon < 20){
+            weapon = 20;
+
+        }
+        else if(lootchance == 5 && weapon < 25){
+            weapon = 25;
+
+        }
+        else if(lootchance == 6 && health < 50){
+            health = 50;
+
+        }
+        else if(lootchance == 7 && health < 100){
+            health = 100;
+
+        }
+        else if(lootchance == 8 && health < 150){
+            health = 150;
+
+        }
+        else if(lootchance == 9 && health < 200){
+            health = 200;
+
+        }
+        else if(lootchance == 10 && health < 250){
+            health = 250;
+
+        }
     }
 }
