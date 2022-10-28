@@ -59,11 +59,12 @@ public class Events {
             String action = input.nextLine();
 
             if (health <= 0) {
-                Project.endtext += "The " + MonsterName + " has defeated you, You are Dead ";
+                Project.endtext = "The " + MonsterName + " has defeated you, You are Dead ";
                 Project.game = false;
                 return;
-            } else if (MonsHealth <= 0) {
-                Project.endtext += "You have defeated a " + MonsterName + "You have Won";
+            }
+            else if (MonsHealth <= 0) {
+                System.out.println("You have defeated a " + MonsterName + "You have Won");
                 health = regen;
                 return;
             }
