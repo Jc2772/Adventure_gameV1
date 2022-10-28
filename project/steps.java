@@ -2,7 +2,7 @@ package project;
 import java.util.*;
 public class steps {
 
-    private final Random rnd = new Random();
+    private static final Random rnd = new Random();
     public steps(String move,int north,int south,int east,int west){
         if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander")) {
             if (move.contains("north") && move.contains("east")) {
@@ -79,7 +79,7 @@ public class steps {
         new Events();
         return;
     }
-    public void RandomDirection(int north,int south, int east, int west ){
+    public static void RandomDirection(int north, int south, int east, int west){
         int random_number1 = rnd.nextInt(1,8);
         switch (random_number1){
             case 1: {

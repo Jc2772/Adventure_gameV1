@@ -2,10 +2,10 @@ package project;
 import java.util.*;
 
 public class Project {
-    private static int north = 0;
-    private static int south = 0;
-    private static int east = 0;
-    private static int west = 0;
+    public static int north = 0;
+    public static int south = 0;
+    public static int east = 0;
+    public static int west = 0;
     public static boolean game;
     public static String endtext;
 
