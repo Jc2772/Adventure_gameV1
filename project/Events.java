@@ -57,23 +57,7 @@ public class Events {
         while(true) {
             System.out.println("What do you do");
             String action = input.nextLine();
-            if(action.contains("attack") || action.contains("stab") || action.contains("hurt") || action.contains("swing")){
-                MonsHealth -= weapon;
-                System.out.println("The " + MonsterName + " launches his attack on you");
-                health -= MonDamage;
-            }
-            else if(action.contains("flee") || action.contains("run") || action.contains("sprint") || action.contains("retreat")){
-                int chance = random.nextInt(1,10);
-                if(chance == 1){
-                    System.out.println("You failed to escape, The " + MonsterName + " launches his attack on you");
-                    health -= MonDamage;
-                }
-                else {
-                    steps.RandomDirection(Project.north, Project.south, Project.east, Project.west);
-                    System.out.println("You have escaped the " + MonsterName);
-                    return;
-                }
-            }
+
             if (health <= 0) {
                 Project.endtext += "The " + MonsterName + " has defeated you, You are Dead ";
                 Project.game = false;
@@ -82,6 +66,30 @@ public class Events {
                 Project.endtext += "You have defeated a " + MonsterName + "You have Won";
                 health = regen;
                 return;
+            }
+            else{
+                if(action.contains("attack") || action.contains("stab") || action.contains("hurt") || action.contains("swing") || action.contains("strike") || action.contains("hit")){
+                    System.out.println("You hit the monster with your weapon");
+                    MonsHealth -= weapon;
+                    System.out.println("The " + MonsterName + " launches his attack on you");
+                    health -= MonDamage;
+                }
+                else if(action.contains("flee") || action.contains("run") || action.contains("sprint") || action.contains("retreat")){
+                    int chance = random.nextInt(1,10);
+                    if(chance == 1){
+                        System.out.println("You failed to escape, The " + MonsterName + " launches his attack on you");
+                        health -= MonDamage;
+                    }
+                    else {
+                        steps.RandomDirection(Project.north, Project.south, Project.east, Project.west);
+                        System.out.println("You have escaped the " + MonsterName);
+                        return;
+                    }
+                }
+                else{
+                    System.out.println("You do nothing as The " + MonsterName + " launches his attack on you");
+                    health -= MonDamage;
+                }
             }
         }
     }
