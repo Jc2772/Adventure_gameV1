@@ -13,8 +13,8 @@ public class Gui {
         frame.setSize(600,120);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JTextArea textArea = new JTextArea();
+        JTextArea textArea = new JTextArea("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
+        JScrollPane scrollPane = new JScrollPane(textArea);
         JTextField input = new JTextField();
         JButton enter = new JButton();
     }
