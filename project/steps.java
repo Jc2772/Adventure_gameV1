@@ -3,7 +3,13 @@ import java.util.*;
 public class steps {
 
     private static final Random rnd = new Random();
-    public steps(String move,int north,int south,int east,int west){
+    public steps(String move){
+        int
+                north = Project.getNorth(),
+                south = Project.getSouth(),
+                east = Project.getEast(),
+                west =Project.getWest();
+
         if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander") || move.contains("head")) {
             if (move.contains("north") && move.contains("east")) {
                 north++;

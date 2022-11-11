@@ -3,10 +3,17 @@ import java.util.*;
 
 @SuppressWarnings("ALL")
 public class Project {
-    public static int north = 0;
-    public static int south = 0;
-    public static int east = 0;
-    public static int west = 0;
+    private static Random random = new Random();
+    private static int north = 0;
+    private static int south = 0;
+    private static int east = 0;
+    private static int west = 0;
+    private static int northborder = random.nextInt(50,75);
+    private static int southborder = random.nextInt(50,75);
+    private static int eastborder = random.nextInt(50,75);
+    private static int westborder = random.nextInt(50,75);
+    private static int northeastborder = random.nextInt(25,50);
+    private static int southwestborder = random.nextInt(25,50);
     public static boolean game;
     public static String endtext;
 
@@ -15,29 +22,29 @@ public class Project {
         Scanner input = new Scanner(System.in);
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
         while (game) {
-            if (north > 3 && east > 3) {
+            if (north > northeastborder && east > northeastborder) {
                 endtext = "You got out of the forest";
                 game = false;
-            } else if (south > 3 && west > 3) {
+            } else if (south > southwestborder && west > southwestborder) {
                 endtext = "You got out of the forest";
                 game = false;
-            } else if (north > 6) {
+            } else if (north > northborder) {
                 endtext = "You got out of the forest";
                 game = false;
-            } else if (south > 6) {
+            } else if (south > southborder) {
                 endtext = "You got out of the forest";
                 game = false;
-            } else if (east > 6) {
+            } else if (east > eastborder) {
                 endtext = "You got out of the forest";
                 game = false;
-            } else if (west > 6) {
+            } else if (west > westborder) {
                 endtext = "You got out of the forest";
                 game = false;
             } else {
                 System.out.print("Enter your next move: ");
                 String move;
                 move = input.nextLine();
-                new steps(move,north,south,east,west);
+                new steps(move);
 
             }
         }
@@ -58,5 +65,21 @@ public class Project {
 
     public static void setWest(int west) {
         Project.west = west;
+    }
+
+    public static int getNorth() {
+        return north;
+    }
+
+    public static int getSouth() {
+        return south;
+    }
+
+    public static int getEast() {
+        return east;
+    }
+
+    public static int getWest() {
+        return west;
     }
 }

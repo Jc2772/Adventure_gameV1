@@ -82,7 +82,7 @@ public class Events {
                         health -= MonDamage;
                     }
                     else {
-                        steps.RandomDirection(Project.north, Project.south, Project.east, Project.west);
+                        steps.RandomDirection(Project.getNorth(),Project.getSouth(),Project.getEast(),Project.getWest());
                         System.out.println("You have escaped the " + MonsterName);
                         return;
                     }
@@ -142,44 +142,44 @@ public class Events {
     private void LootEvents(){
         int lootchance = random.nextInt(1,10);
         if(lootchance == 1 && weapon < 5){
+            System.out.println("You found a rusty short sword, you pick it up");
             weapon = 5;
-
         }
         else if(lootchance == 2 && weapon < 10){
+            System.out.println("You found a spear, you pick it up");
             weapon = 10;
-
         }
         else if(lootchance == 3 && weapon < 15){
+            System.out.println("You found a fine short sword, you pick it up");
             weapon = 15;
-
         }
         else if(lootchance == 4 && weapon < 20){
+            System.out.println("You found a fine long sword, you pick it up");
             weapon = 20;
-
         }
         else if(lootchance == 5 && weapon < 25){
+            System.out.println("You found an enchanted long sword longsword stuck on a rock, you pull it out of the rock");
             weapon = 25;
-
         }
         else if(lootchance == 6 && health < 50){
+            System.out.println("You found ");
             health = 50;
-
         }
         else if(lootchance == 7 && health < 100){
+            System.out.println();
             health = 100;
-
         }
         else if(lootchance == 8 && health < 150){
+            System.out.println();
             health = 150;
-
         }
         else if(lootchance == 9 && health < 200){
+            System.out.println();
             health = 200;
-
         }
         else if(lootchance == 10 && health < 250){
+            System.out.println();
             health = 250;
-
         }
     }
 }
