@@ -16,64 +16,48 @@ public class steps {
                 south--;
                 east++;
                 west--;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("north") && move.contains("west")) {
                 north++;
                 south--;
                 east--;
                 west++;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("south") && move.contains("east")) {
                 north--;
                 south++;
                 east++;
                 west--;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("south") && move.contains("west")) {
                 north--;
                 south++;
                 east--;
                 west++;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("north")){
                 north++;
                 south--;
-                Project.setNorth(north);
-                Project.setSouth(south);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("south")){
                 south++;
                 north--;
-                Project.setSouth(south);
-                Project.setNorth(north);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("east")){
                 east++;
                 west--;
-                Project.setEast(east);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
             }
             else if(move.contains("west")){
                 west++;
                 east--;
-                Project.setWest(west);
-                Project.setEast(east);
+                Project.setDirection(north, south, east, west);
             }
             else{
                 RandomDirection(north,south,east,west);
@@ -92,10 +76,7 @@ public class steps {
                 south--;
                 east++;
                 west--;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 2: {
@@ -103,10 +84,7 @@ public class steps {
                 south--;
                 east--;
                 west++;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 3: {
@@ -114,10 +92,7 @@ public class steps {
                 south++;
                 east++;
                 west--;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 4: {
@@ -125,38 +100,31 @@ public class steps {
                 south++;
                 east--;
                 west++;
-                Project.setNorth(north);
-                Project.setEast(east);
-                Project.setSouth(south);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 5: {
                 north++;
                 south--;
-                Project.setNorth(north);
-                Project.setSouth(south);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 6: {
                 south++;
                 north--;
-                Project.setSouth(south);
-                Project.setNorth(north);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 7: {
                 east++;
                 west--;
-                Project.setEast(east);
-                Project.setWest(west);
+                Project.setDirection(north, south, east, west);
                 break;
             }
             case 8: {
                 west++;
                 east--;
-                Project.setWest(west);
-                Project.setEast(east);
+                Project.setDirection(north, south, east, west);
                 break;
             }
         }

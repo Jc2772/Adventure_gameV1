@@ -51,19 +51,10 @@ public class Project {
         System.out.print(endtext);
     }
 
-    public static void setNorth(int north) {
+    public static void setDirection(int north,int south,int east,int west) {
         Project.north = north;
-    }
-
-    public static void setSouth(int south) {
         Project.south = south;
-    }
-
-    public static void setEast(int east) {
         Project.east = east;
-    }
-
-    public static void setWest(int west) {
         Project.west = west;
     }
 
