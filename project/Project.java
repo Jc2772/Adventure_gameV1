@@ -18,7 +18,6 @@ public class Project {
     public static String endtext;
 
     public static void main(String[] args) {
-        Gui gui = new Gui();
         game = true;
         Scanner input = new Scanner(System.in);
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
