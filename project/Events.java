@@ -162,11 +162,11 @@ public class Events {
             weapon = 25;
         }
         else if(lootchance == 6 && health < 50){
-            System.out.println("You found ");
+            System.out.println("You found Rusty Armor of a fallen soldier, you take it");
             health = 50;
         }
         else if(lootchance == 7 && health < 100){
-            System.out.println();
+            System.out.println("You found Armor of a fallen soldier, you take it");
             health = 100;
         }
         else if(lootchance == 8 && health < 150){
