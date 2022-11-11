@@ -4,6 +4,7 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 public class Gui {
     public Gui(){
         JFrame frame = new JFrame("Adeventure game");
@@ -12,9 +13,9 @@ public class Gui {
         frame.setSize(600,120);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        /*
+
         JTextArea textArea = new JTextArea();
         JTextField input = new JTextField();
-        JButton enter = new JButton();*/
+        JButton enter = new JButton();
     }
 }
