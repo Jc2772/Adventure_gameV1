@@ -13,7 +13,9 @@
           <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="2"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="c9d4e" class="javax.swing.JTextField" binding="input">
@@ -31,6 +33,8 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
           <text value="Button"/>
         </properties>
       </component>
