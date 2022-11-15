@@ -19,17 +19,20 @@ public class Project {
     private static int southwestborder = random.nextInt(25, 50);
     public static boolean game;
     public static String endtext;
-    private JTextField input;
-    private JButton Enter;
     private JLabel text;
     private JPanel window;
+    private JTextField input;
+    private JButton enter;
 
     public static void main(String[] args) {
-        JFrame jFrame = new JFrame();
+        JFrame frame = new JFrame();
         Project gui = new Project();
+        gui.createUIComponents();
 
-        jFrame.setSize(300, 300);
-        jFrame.setVisible(true);
+        frame.setSize(300, 300);
+        frame.setVisible(true);
+
+        frame.add(gui.window);
         /*game = true;
         Scanner input = new Scanner(System.in);
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
@@ -88,10 +91,10 @@ public class Project {
 
     public Project() {
         $$$setupUI$$$();
-        Enter.addActionListener(new ActionListener() {
+        enter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(Enter, "HI", "hi", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(enter, "HI", "hi", JOptionPane.PLAIN_MESSAGE);
             }
         });
     }
@@ -110,15 +113,30 @@ public class Project {
      */
     private void $$$setupUI$$$() {
         window = new JPanel();
-        window.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 1, new Insets(50, 50, 50, 50), -1, -1));
-        Enter = new JButton();
-        Enter.setText("Button");
-        window.add(Enter, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        input = new JTextField();
-        window.add(input, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        window.setLayout(new GridBagLayout());
         text = new JLabel();
         text.setText("Label");
-        window.add(text, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        GridBagConstraints gbc;
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        window.add(text, gbc);
+        input = new JTextField();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.SOUTH;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        window.add(input, gbc);
+        enter = new JButton();
+        enter.setText("Button");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        window.add(enter, gbc);
     }
 
     /**
