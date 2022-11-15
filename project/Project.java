@@ -1,8 +1,11 @@
 package project;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
 @SuppressWarnings("ALL")
-public class Project {
+public class Project extends JFrame {
     private static Random random = new Random();
     private static int north = 0;
     private static int south = 0;
@@ -16,9 +19,19 @@ public class Project {
     private static int southwestborder = random.nextInt(25,50);
     public static boolean game;
     public static String endtext;
+    private JTextField input;
+    private JButton Enter;
+    private JLabel text;
+    private JPanel window;
 
     public static void main(String[] args) {
-        game = true;
+        Project gui = new Project();
+        gui.setContentPane(gui.window);
+        gui.setTitle("Adventure game");
+        gui.setSize(300,400);
+        gui.setVisible(true);
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        /*game = true;
         Scanner input = new Scanner(System.in);
         System.out.println("You are in a forest with no way out,\nYou only hava a dagger\nand you must find your way out");
         while (game) {
@@ -48,7 +61,7 @@ public class Project {
 
             }
         }
-        System.out.print(endtext);
+        System.out.print(endtext);*/
     }
 
     public static void setDirection(int north,int south,int east,int west) {
@@ -72,5 +85,16 @@ public class Project {
 
     public static int getWest() {
         return west;
+    }
+    public Project(){
+        Enter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
