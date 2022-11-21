@@ -100,15 +100,14 @@ public class Project {
                     Events();
                 }
             }
-            public void Events(){
-                int eventType = random.nextInt(1,3);
-                if(eventType == 1){
+
+            public void Events() {
+                int eventType = random.nextInt(1, 3);
+                if (eventType == 1) {
                     new MonsterEvents().monsterevents();
-                }
-                else if (eventType == 2) {
+                } else if (eventType == 2) {
                     new GenericEvents().genericevents();
-                }
-                else if(eventType == 3){
+                } else if (eventType == 3) {
                     new LootEvents().lootevents();
                 }
             }
