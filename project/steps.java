@@ -1,7 +1,8 @@
 package project;
+import javax.swing.*;
 import java.util.*;
 public class steps {
-
+    private static final Player player = new Player();
     private static final Random rnd = new Random();
     public steps(String move){
         int
@@ -62,10 +63,10 @@ public class steps {
             else{
                 RandomDirection(north,south,east,west);
             }
-            new Events();
+            player.setDistanceTraveled();
         }
         else{
-            System.out.println("You start to think about what you want to do in your head, but then you realise you are stuck in a forest so you better not waist your precious time");
+            JOptionPane.showMessageDialog(null,"You start to think about what you want to do in your head, but then you realise you are stuck in a forest so you better not waist your precious time");
         }
     }
     public static void RandomDirection(int north, int south, int east, int west){
@@ -128,5 +129,6 @@ public class steps {
                 break;
             }
         }
+        player.setDistanceTraveled();
     }
 }
