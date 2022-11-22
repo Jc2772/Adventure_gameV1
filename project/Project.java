@@ -98,6 +98,7 @@ public class Project {
                     move = input.getText();
                     new steps(move);
                     Events();
+                    frame.setVisible(true);
                 }
             }
 
