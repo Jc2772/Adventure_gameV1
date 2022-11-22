@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class Player {
     private String name;
-    private double health;
-    private double weapon;
+    private double health = 25;
+    private double weapon = 1;
     private int MonKills = 0;
     private int DistanceTraveled = 0;
     public void setName() {
