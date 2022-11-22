@@ -46,7 +46,7 @@ public class MonsterEvents {
                 return;
             }
             else{
-                if(action.contains("attack") || action.contains("stab") || action.contains("hurt") || action.contains("swing") || action.contains("strike") || action.contains("hit")){
+                if(action.contains("attack") || action.contains("stab") || action.contains("hurt") || action.contains("swing") || action.contains("strike") || action.contains("hit") || action.contains("kick") || action.contains("punch")){
                     JOptionPane.showMessageDialog(null,"You hit the monster with your weapon");
                     monsHealth -= weapon;
                     JOptionPane.showMessageDialog(null,"The " + monsterName + " launches his attack on you");

@@ -11,7 +11,7 @@ public class steps {
                 east = Project.getEast(),
                 west =Project.getWest();
 
-        if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander") || move.contains("head")) {
+        if(move.contains("walk") || move.contains("move") || move.contains("travel") || move.contains("wander") || move.contains("head") || move.contains("run")) {
             if (move.contains("north") && move.contains("east")) {
                 north++;
                 south--;
