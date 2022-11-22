@@ -39,15 +39,15 @@ public class LootEvents {
             player.setHealth(100);
         }
         else if(lootchance == 8 && health < 150){
-            JOptionPane.showMessageDialog(null,"");
+            JOptionPane.showMessageDialog(null,"you found some well made steel armor, you take it");
             player.setHealth(150);
         }
         else if(lootchance == 9 && health < 200){
-            System.out.println();
+            JOptionPane.showMessageDialog(null,"you found some damaged spell armor, you take it");
             player.setHealth(200);
         }
         else if(lootchance == 10 && health < 250){
-            System.out.println();
+            JOptionPane.showMessageDialog(null,"you found some well made spell armor, you take it");
             player.setHealth(250);
         }
     }

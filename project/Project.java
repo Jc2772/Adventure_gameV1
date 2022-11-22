@@ -161,6 +161,7 @@ public class Project {
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         window.add(enter, gbc);
     }
 
