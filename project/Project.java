@@ -79,6 +79,10 @@ public class Project {
 
     public Project() {
         $$$setupUI$$$();
+                /*
+                code source: https://stackoverflow.com/questions/13207519/adding-a-new-windowlistener-to-a-jframe
+                date accessed: 22/11/2022
+                */
         frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -88,6 +92,10 @@ public class Project {
             public void windowClosing(WindowEvent e) {
                 String filename = "stats.txt";
                 boolean trc = true;
+                /*
+                code source: https://www.geeksforgeeks.org/serialization-in-java/
+                date accessed: 22/11/2022
+                */
                 while (trc) {
                     try {
                         FileOutputStream fileOut = new FileOutputStream(filename);
@@ -149,6 +157,10 @@ public class Project {
                 }
                 if (game == false) {
                     JOptionPane.showMessageDialog(null, "You got out of the forest");
+                    /*
+                    source://stackoverflow.com/questions/1234912/how-to-programmatically-close-a-jframe/1235994
+                    date accessed: 22/11/2002
+                     */
                     frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
                     ;
                 } else {
