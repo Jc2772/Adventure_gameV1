@@ -5,6 +5,7 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.io.*;
 
 @SuppressWarnings("ALL")
 public class Project {
@@ -28,8 +29,12 @@ public class Project {
 
     public static JFrame frame = new JFrame();
 
+    public JLabel getText() {
+        return text;
+    }
 
     public static void main(String[] args) {
+
         new Player().setName();
         Project gui = new Project();
         gui.createUIComponents();
@@ -74,6 +79,58 @@ public class Project {
 
     public Project() {
         $$$setupUI$$$();
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                String filename = "stats.txt";
+                boolean trc = true;
+                while (trc) {
+                    try {
+                        FileOutputStream fileOut = new FileOutputStream(filename);
+                        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                        Player player = new Player();
+                        out.writeChars("---------------------------------------------------------------\n" +
+                                "Player name: " + player.getName() +
+                                "\nhealth: " + player.getHealth()
+                                + "\ndamage: " + player.getWeapon()
+                                + "\ndistance: " + player.getDistanceTraveled()
+                                + "\nKills: " + player.getMonKills()
+                                + "\n\n\n");
+                        out.close();
+                        fileOut.close();
+                        JOptionPane.showMessageDialog(null, "Data has been saved");
+                        trc = false;
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null, "Data has not been saved", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                System.exit(0);
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+            }
+        });
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
@@ -92,23 +149,26 @@ public class Project {
                 }
                 if (game == false) {
                     JOptionPane.showMessageDialog(null, "You got out of the forest");
+                    frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+                    ;
                 } else {
                     text.setText("Enter your next move: ");
                     String move;
                     move = input.getText();
                     new steps(move);
                     Events();
+                    input.setText("");
                     frame.setVisible(true);
                 }
             }
 
             public void Events() {
-                int eventType = random.nextInt(1, 3);
-                if (eventType == 1) {
-                    new MonsterEvents().monsterevents();
-                } else if (eventType == 2) {
+                int eventType = random.nextInt(1, 10);
+                if (eventType >= 1 && eventType <= 5) {
                     new GenericEvents().genericevents();
-                } else if (eventType == 3) {
+                } else if (eventType >= 6 && eventType <= 8) {
+                    new MonsterEvents().monsterevents();
+                } else if (eventType <= 9 && eventType >= 10) {
                     new LootEvents().lootevents();
                 }
             }

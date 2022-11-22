@@ -34,4 +34,16 @@ public class Player {
     public double getHealth() {
         return health;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMonKills() {
+        return MonKills;
+    }
+
+    public int getDistanceTraveled() {
+        return DistanceTraveled;
+    }
 }
