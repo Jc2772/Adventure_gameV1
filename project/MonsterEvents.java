@@ -6,10 +6,9 @@ import java.awt.event.WindowEvent;
 import static project.Project.frame;
 import static project.Project.random;
 public class MonsterEvents {
-    private final Player player = new Player();
-    private double health = player.getHealth();
-    private final double weapon = player.getWeapon();
-    public void monsterevents(){
+    public void monsterevents(Player player){
+        double health = player.getHealth(),
+        weapon = player.getWeapon();
         int Monster = random.nextInt(1,300);
         Monster monster = new Monster();
         if(Monster >= 1 && Monster <= 100){
@@ -34,7 +33,6 @@ public class MonsterEvents {
         double monsHealth = monster.getMonsterHealth();
         double monDamage = monster.getMonsterDamage();
         JOptionPane.showMessageDialog(null,steps.getText() + "\nYou have encountered a " + monsterName + ",You could try to run away from it and get lost in the woods or choose to risk your life");
-        double regen = health;
         String battle_text = "";
         while(true) {
             if (health <= 0) {
@@ -44,8 +42,9 @@ public class MonsterEvents {
             }
             else if (monsHealth <= 0) {
                 JOptionPane.showMessageDialog(null,"You have defeated a " + monsterName + "You have Won");
-                health = regen;
-                player.setMonKills();
+                int monKills = player.getMonKills();
+                monKills++;
+                player.setMonKills(monKills);
                 return;
             }
             else{
@@ -65,7 +64,7 @@ public class MonsterEvents {
                         health -= monDamage;
                     }
                     else {
-                        steps.RandomDirection(Project.getNorth(),Project.getSouth(),Project.getEast(),Project.getWest());
+                        steps.RandomDirection(Project.getNorth(),Project.getSouth(),Project.getEast(),Project.getWest(),player);
                         JOptionPane.showMessageDialog(null,"You have escaped the " + monsterName);
                         return;
                     }

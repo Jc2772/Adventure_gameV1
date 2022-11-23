@@ -5,10 +5,9 @@ import static project.Project.random;
 
 public class LootEvents {
 
-    private final Player player = new Player();
-    private final double health = player.getHealth();
-    private final double weapon = player.getWeapon();
-    public void lootevents(){
+    public void lootevents(Player player){
+        double health = player.getHealth()
+        ,weapon = player.getWeapon();
         int lootchance = random.nextInt(1,10);
         if(lootchance == 1 && weapon < 5){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found a rusty short sword, you pick it up");
@@ -16,19 +15,19 @@ public class LootEvents {
         }
         else if(lootchance == 2 && weapon < 10){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found a spear, you pick it up");
-            player.setWeapon(5);
+            player.setWeapon(10);
         }
         else if(lootchance == 3 && weapon < 15){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found a fine short sword, you pick it up");
-            player.setWeapon(5);
+            player.setWeapon(15);
         }
         else if(lootchance == 4 && weapon < 20){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found a fine long sword, you pick it up");
-            player.setWeapon(5);
+            player.setWeapon(20);
         }
         else if(lootchance == 5 && weapon < 25){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found an enchanted long sword longsword stuck on a rock, you pull it out of the rock");
-            player.setWeapon(5);
+            player.setWeapon(25);
         }
         else if(lootchance == 6 && health < 50){
             JOptionPane.showMessageDialog(null,steps.getText() + "\nYou found Rusty Armor of a fallen soldier, you take it");

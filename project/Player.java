@@ -8,8 +8,8 @@ public class Player {
     private double weapon = 1;
     private int MonKills = 0;
     private int DistanceTraveled = 0;
-    public void setName() {
-        this.name = JOptionPane.showInputDialog("Enter Your name");
+    public void setName(String name) {
+        this.name = name;
     }
     public void setHealth(double health) {
         this.health = health;
@@ -19,12 +19,12 @@ public class Player {
         this.weapon = weapon;
     }
 
-    public void setMonKills() {
-        MonKills++;
+    public void setMonKills(int MonKills) {
+        this.MonKills = MonKills ;
     }
 
-    public void setDistanceTraveled() {
-        DistanceTraveled++;
+    public void setDistanceTraveled(int DistanceTraveled) {
+        this.DistanceTraveled = DistanceTraveled;
     }
 
     public double getWeapon() {

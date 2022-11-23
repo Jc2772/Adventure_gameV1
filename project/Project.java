@@ -27,6 +27,8 @@ public class Project {
     private JTextField input;
     private JButton enter;
 
+    static Player player;
+
     public static JFrame frame = new JFrame();
 
     public JLabel getText() {
@@ -35,7 +37,12 @@ public class Project {
 
     public static void main(String[] args) {
 
-        new Player().setName();
+        player = new Player();
+
+        String name = JOptionPane.showInputDialog("Enter Your name");
+
+
+        player.setName(name);
         Project gui = new Project();
         gui.createUIComponents();
         frame.setSize(500, 500);
@@ -90,32 +97,31 @@ public class Project {
 
             @Override
             public void windowClosing(WindowEvent e) {
-                String filename = "stats.txt";
+                String filename = "stats.txt", filetext;
                 boolean trc = true;
                 /*
                 code source: https://www.geeksforgeeks.org/serialization-in-java/
                 date accessed: 22/11/2022
                 */
-                while (trc) {
-                    try {
-                        FileOutputStream fileOut = new FileOutputStream(filename);
-                        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-                        Player player = new Player();
-                        out.writeChars("---------------------------------------------------------------\n" +
-                                "Player name: " + player.getName() +
-                                "\nhealth: " + player.getHealth()
-                                + "\ndamage: " + player.getWeapon()
-                                + "\ndistance: " + player.getDistanceTraveled()
-                                + "\nKills: " + player.getMonKills()
-                                + "\n\n\n");
-                        out.close();
-                        fileOut.close();
-                        JOptionPane.showMessageDialog(null, "Data has been saved");
-                        trc = false;
-                    } catch (IOException ex) {
-                        JOptionPane.showMessageDialog(null, "Data has not been saved", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+
+                try {
+                    FileWriter out = new FileWriter(filename);
+                    //Player player = new Player();
+                    filetext = ("---------------------------------------------------------------\n" +
+                            "Player name: " + player.getName() +
+                            "\nhealth: " + player.getHealth()
+                            + "\ndamage: " + player.getWeapon()
+                            + "\ndistance: " + player.getDistanceTraveled()
+                            + "\nKills: " + player.getMonKills()
+                            + "\n\n\n");
+                    out.write(filetext);
+                    out.close();
+                    JOptionPane.showMessageDialog(null, "Data has been saved");
+
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Data has not been saved", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+
                 System.exit(0);
             }
 
@@ -167,7 +173,7 @@ public class Project {
                     text.setText("Enter your next move: ");
                     String move;
                     move = input.getText();
-                    new steps(move);
+                    new steps(move, player);
                     Events();
                     input.setText("");
                     frame.setVisible(true);
@@ -179,9 +185,9 @@ public class Project {
                 if (eventType >= 1 && eventType <= 5) {
                     new GenericEvents().genericevents();
                 } else if (eventType >= 6 && eventType <= 8) {
-                    new MonsterEvents().monsterevents();
-                } else if (eventType <= 9 && eventType >= 10) {
-                    new LootEvents().lootevents();
+                    new MonsterEvents().monsterevents(player);
+                } else if (eventType >= 9 && eventType <= 10) {
+                    new LootEvents().lootevents(player);
                 }
             }
         });

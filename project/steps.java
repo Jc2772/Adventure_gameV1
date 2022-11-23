@@ -6,7 +6,6 @@ import java.util.*;
 import static project.Project.frame;
 
 public class steps {
-    private static final Player player = new Player();
     private static final Random rnd = new Random();
     private static String text;
 
@@ -14,7 +13,7 @@ public class steps {
         return text;
     }
 
-    public steps(String move){
+    public steps(String move,Player player){
         int
                 north = Project.getNorth(),
                 south = Project.getSouth(),
@@ -83,9 +82,11 @@ public class steps {
             }
             else{
                 text = "you head in a random direction";
-                RandomDirection(north,south,east,west);
+                RandomDirection(north,south,east,west,player);
             }
-            player.setDistanceTraveled();
+            int distance = player.getDistanceTraveled();
+            distance++;
+            player.setDistanceTraveled(distance);
         }
         else if(move.equals("help help, im stuck in the forest")){
             text = "";
@@ -99,7 +100,7 @@ public class steps {
             text = "You start to think about what you want to do in your head, but then you realise you are stuck in a forest so you better not waist your precious time";
         }
     }
-    public static void RandomDirection(int north, int south, int east, int west){
+    public static void RandomDirection(int north, int south, int east, int west,Player player){
         int random_number1 = rnd.nextInt(1,8);
         switch (random_number1){
             case 1: {
@@ -159,6 +160,8 @@ public class steps {
                 break;
             }
         }
-        player.setDistanceTraveled();
+        int distance = player.getDistanceTraveled();
+        distance++;
+        player.setDistanceTraveled(distance);
     }
 }
