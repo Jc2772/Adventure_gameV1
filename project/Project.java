@@ -105,7 +105,8 @@ public class Project {
                 */
 
                 try {
-                    FileWriter out = new FileWriter(filename);
+                    FileOutputStream file = new FileOutputStream(filename);
+                    ObjectOutputStream out = new ObjectOutputStream(file);
                     //Player player = new Player();
                     filetext = ("---------------------------------------------------------------\n" +
                             "Player name: " + player.getName() +
@@ -114,7 +115,8 @@ public class Project {
                             + "\ndistance: " + player.getDistanceTraveled()
                             + "\nKills: " + player.getMonKills()
                             + "\n\n\n");
-                    out.write(filetext);
+
+                    out.writeChars(filetext);
                     out.close();
                     JOptionPane.showMessageDialog(null, "Data has been saved");
 
