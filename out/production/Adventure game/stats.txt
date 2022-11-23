@@ -1,8 +1,8 @@
 ---------------------------------------------------------------
-Player name: finally
+Player name: jame
 health: 25.0
 damage: 1.0
-distance: 0
+distance: 2
 Kills: 0
 
 
