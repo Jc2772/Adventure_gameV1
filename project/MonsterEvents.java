@@ -1,6 +1,5 @@
 package project;
 import javax.swing.*;
-
 import java.awt.event.WindowEvent;
 
 import static project.Project.frame;
@@ -60,7 +59,7 @@ public class MonsterEvents {
                 else if(action.contains("flee") || action.contains("run") || action.contains("sprint") || action.contains("retreat") || action.contains("walk") || action.contains("move") || action.contains("travel") || action.contains("wander") || action.contains("head") || action.contains("go")){
                     int chance = random.nextInt(1,10);
                     if(chance <= 2){
-                        JOptionPane.showMessageDialog(null,"You failed to escape, The " + monsterName + " launches his attack on you");
+                        battle_text = null,"You failed to escape, The " + monsterName + " launches his attack on you";
                         health -= monDamage;
                     }
                     else {
@@ -70,7 +69,7 @@ public class MonsterEvents {
                     }
                 }
                 else{
-                    JOptionPane.showMessageDialog(null,"You do nothing as The " + monsterName + " launches his attack on you");
+                    battle_text = null,"You do nothing as The " + monsterName + " launches his attack on you";
                     health -= monDamage;
                 }
             }
