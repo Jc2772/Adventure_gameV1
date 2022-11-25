@@ -39,7 +39,7 @@ public class MonsterEvents {
         while(true) {
 
             if (monsHealth <= 0) {
-                JOptionPane.showMessageDialog(null,"You have defeated a " + monsterName + "You have Won");
+                JOptionPane.showMessageDialog(null,"You have defeated a " + monsterName + ", You have Won");
                 int monKills = player.getMonKills();
                 monKills++;
                 player.setMonKills(monKills);
