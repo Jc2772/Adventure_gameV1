@@ -14,12 +14,12 @@ public class Project {
     private static int south = 0;
     private static int east = 0;
     private static int west = 0;
-    private static int northborder = random.nextInt(50, 75);
-    private static int southborder = random.nextInt(50, 75);
-    private static int eastborder = random.nextInt(50, 75);
-    private static int westborder = random.nextInt(50, 75);
-    private static int northeastborder = random.nextInt(25, 50);
-    private static int southwestborder = random.nextInt(25, 50);
+    private static int northborder = random.nextInt(20, 35);
+    private static int southborder = random.nextInt(20, 35);
+    private static int eastborder = random.nextInt(20, 35);
+    private static int westborder = random.nextInt(20, 35);
+    private static int northeastborder = random.nextInt(10, 25);
+    private static int southwestborder = random.nextInt(10, 25);
     public static boolean game = true;
     public static String endtext;
     private JLabel text;
@@ -34,7 +34,7 @@ public class Project {
     public JLabel getText() {
         return text;
     }
-    /**the main is used for setup**/
+       //setup
     public static void main(String[] args) {
 
         player = new Player();
@@ -60,7 +60,7 @@ public class Project {
         frame.setVisible(true);
         frame.add(gui.window);
     }
-    /**sets the direction the player is going**/
+
     public static void setDirection(int north, int south, int east, int west) {
         Project.north = north;
         Project.south = south;
@@ -94,7 +94,7 @@ public class Project {
             @Override
             public void windowOpened(WindowEvent e) {
             }
-            /**window closing is used to close the programs**/
+
             @Override
             public void windowClosing(WindowEvent e) {
                 String filename = "stats.txt", filetext;
@@ -147,7 +147,7 @@ public class Project {
             public void windowDeactivated(WindowEvent e) {
             }
         });
-        /**action listener starts up the whole program**/
+        //action listener for button aka meat of meat of the program
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
