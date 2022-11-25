@@ -7,6 +7,6 @@
 
 * the generic events add flavor to the game.
 
-* the loot events will boost you stats to allow you to fight monsters.
+* the loot events will boost your stats to allow you to fight harder monsters.
 
 - the game has a failsafe for any event that happens whether by player input or some condition being checked.
