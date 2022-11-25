@@ -49,7 +49,6 @@ public class MonsterEvents {
             else{
                 String action = JOptionPane.showInputDialog(String.format("%90S\n%90s\n%90s\n\n\n",
                         "Player health: " + health, "Monster health: " + monsHealth,"Player damage: " + weapon) + battle_text + "\nWhat do you do");
-                battle_text = "";
                 if(action.contains("attack") || action.contains("stab") || action.contains("hurt") || action.contains("swing") || action.contains("strike") || action.contains("hit") || action.contains("kick") || action.contains("punch") || action.contains("fight")){
                     battle_text = "You hit the monster with your weapon" + "\n\nThe " + monsterName + " launches his attack on you\n\n";
                     monsHealth -= weapon;
@@ -59,7 +58,7 @@ public class MonsterEvents {
                 else if(action.contains("flee") || action.contains("run") || action.contains("sprint") || action.contains("retreat") || action.contains("walk") || action.contains("move") || action.contains("travel") || action.contains("wander") || action.contains("head") || action.contains("go")){
                     int chance = random.nextInt(1,10);
                     if(chance <= 2){
-                        battle_text = null,"You failed to escape, The " + monsterName + " launches his attack on you";
+                        battle_text = "You failed to escape, The " + monsterName + " launches his attack on you";
                         health -= monDamage;
                     }
                     else {
@@ -69,7 +68,7 @@ public class MonsterEvents {
                     }
                 }
                 else{
-                    battle_text = null,"You do nothing as The " + monsterName + " launches his attack on you";
+                    battle_text = "You do nothing as The " + monsterName + " launches his attack on you";
                     health -= monDamage;
                 }
             }
