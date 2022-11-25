@@ -14,12 +14,12 @@ public class Project {
     private static int south = 0;
     private static int east = 0;
     private static int west = 0;
-    private static int northborder = random.nextInt(50, 75);
-    private static int southborder = random.nextInt(50, 75);
-    private static int eastborder = random.nextInt(50, 75);
-    private static int westborder = random.nextInt(50, 75);
-    private static int northeastborder = random.nextInt(25, 50);
-    private static int southwestborder = random.nextInt(25, 50);
+    private static int northborder = random.nextInt(20, 35);
+    private static int southborder = random.nextInt(20, 35);
+    private static int eastborder = random.nextInt(20, 35);
+    private static int westborder = random.nextInt(20, 35);
+    private static int northeastborder = random.nextInt(10, 25);
+    private static int southwestborder = random.nextInt(10, 25);
     public static boolean game = true;
     public static String endtext;
     private JLabel text;
@@ -34,7 +34,7 @@ public class Project {
     public JLabel getText() {
         return text;
     }
-
+       //setup
     public static void main(String[] args) {
 
         player = new Player();
@@ -147,6 +147,7 @@ public class Project {
             public void windowDeactivated(WindowEvent e) {
             }
         });
+        //action listener for button aka meat of meat of the program
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
