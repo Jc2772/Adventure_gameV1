@@ -9,9 +9,12 @@ import java.io.*;
 
 @SuppressWarnings("ALL")
 
-/**main**/
+/**
+ *
+ * main project
+ * */
 public class Project {
-
+    /**random method*/
     public static Random random = new Random();
     private static int north = 0;
     private static int south = 0;
@@ -23,22 +26,33 @@ public class Project {
     private static int westborder = random.nextInt(20, 35);
     private static int northeastborder = random.nextInt(10, 25);
     private static int southwestborder = random.nextInt(10, 25);
+    /**game check**/
     public static boolean game = true;
-    public static String endtext;
+    /**gui**/
     private JLabel text;
+    /**gui**/
     private JPanel window;
+    /**gui**/
     private JTextField input;
+    /**gui**/
     private JButton enter;
 
     static Player player;
-
+    /**sets the jframe**/
     public static JFrame frame = new JFrame();
-    /**returns the text
-     * @return text**/
+
+    /**
+     * returns the text
+     *
+     * @return text
+     **/
     public JLabel getText() {
         return text;
     }
-       /**setup**/
+
+    /**
+     * setup
+    @param args is for main**/
     public static void main(String[] args) {
 
         player = new Player();
@@ -64,30 +78,53 @@ public class Project {
         frame.setVisible(true);
         frame.add(gui.window);
     }
-    /**sets the corodinates of the player**/
+
+    /**
+     * sets the corodinates of the player
+     * @param east gives east
+     * @param north gives north
+     * @param south gives south
+     * @param west gives west
+     **/
     public static void setDirection(int north, int south, int east, int west) {
         Project.north = north;
         Project.south = south;
         Project.east = east;
         Project.west = west;
     }
-    /**gives north**/
+
+    /**
+     * gives north
+     * @return west
+     **/
     public static int getNorth() {
         return north;
     }
-    /**gives south**/
+
+    /**
+     * gives south
+     * @return west
+     **/
     public static int getSouth() {
         return south;
     }
-    /**gives east**/
+
+    /**
+     * gives east
+     * @return west
+     **/
     public static int getEast() {
         return east;
     }
-    /**gives west**/
+
+    /**
+     * gives west
+     * @return west
+     **/
     public static int getWest() {
         return west;
     }
-
+    /**ui**/
     public Project() {
         $$$setupUI$$$();
                 /*
@@ -130,14 +167,17 @@ public class Project {
 
                 System.exit(0);
             }
+
             /**@noinspection ALL**/
             @Override
             public void windowClosed(WindowEvent e) {
             }
+
             /**@noinspection ALL**/
             @Override
             public void windowIconified(WindowEvent e) {
             }
+
             /**@noinspection ALL**/
             @Override
             public void windowDeiconified(WindowEvent e) {
@@ -187,6 +227,7 @@ public class Project {
                     frame.setVisible(true);
                 }
             }
+
             /**generates events**/
             public void Events() {
                 int eventType = random.nextInt(1, 10);
@@ -273,12 +314,16 @@ public class Project {
         return fontWithFallback instanceof FontUIResource ? fontWithFallback : new FontUIResource(fontWithFallback);
     }
 
-    /*
-     noinspection ALL
+    /**
+     * ui
+     * @return window
      */
-    /**@noinspection ALL**/
     public JComponent $$$getRootComponent$$$() {
         return window;
     }
+
+    /*
+     noinspection ALL
+     */
 
 }
