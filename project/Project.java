@@ -34,7 +34,7 @@ public class Project {
     public JLabel getText() {
         return text;
     }
-
+    /**the main is used for setup**/
     public static void main(String[] args) {
 
         player = new Player();
@@ -60,7 +60,7 @@ public class Project {
         frame.setVisible(true);
         frame.add(gui.window);
     }
-
+    /**sets the direction the player is going**/
     public static void setDirection(int north, int south, int east, int west) {
         Project.north = north;
         Project.south = south;
@@ -94,7 +94,7 @@ public class Project {
             @Override
             public void windowOpened(WindowEvent e) {
             }
-
+            /**window closing is used to close the programs**/
             @Override
             public void windowClosing(WindowEvent e) {
                 String filename = "stats.txt", filetext;
@@ -147,6 +147,7 @@ public class Project {
             public void windowDeactivated(WindowEvent e) {
             }
         });
+        /**action listener starts up the whole program**/
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);

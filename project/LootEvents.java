@@ -4,7 +4,7 @@ import javax.swing.*;
 import static project.Project.random;
 
 public class LootEvents {
-
+    /**generates loot event of what loot you are going to get and changes weapon variable in player class**/
     public void lootevents(Player player){
         double health = player.getHealth()
         ,weapon = player.getWeapon();
