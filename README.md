@@ -1,7 +1,7 @@
 # Adventure_game
-+ this project is an adventure game where you have to get out of the woods. 
+## this project is an adventure game where you have to get out of the woods. 
 
-* it will use a basic gui with a joptionpane and will use random numbers to generate random events. 
++ it will use a basic gui with a joptionpane and will use random numbers to generate random events. 
 
 * The monster event will allow you to fight the monsters or run away from them.
 
