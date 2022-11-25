@@ -1,5 +1,5 @@
 package project;
-
+/**class for monster info*/
 public class Monster {
     private final String[] MonsterName = {"Goblin","Bandit","Bear","Wisp","Golem","Lich"};
     private final double[] MonsterHealth = {2,5,10,2,50,200};

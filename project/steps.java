@@ -4,15 +4,18 @@ import java.awt.event.WindowEvent;
 import java.util.*;
 
 import static project.Project.frame;
-
+/**deals with the first input**/
 public class steps {
     private static final Random rnd = new Random();
     private static String text;
-
+    /**returns text
+     * @return text**/
     public static String getText() {
         return text;
     }
-
+    /**checks the words the player uses and generate a response
+     * @param player is used to change distance traveled
+     * @param move is used to be analysed **/
     public steps(String move,Player player){
         int
                 north = Project.getNorth(),
@@ -100,6 +103,12 @@ public class steps {
             text = "You start to think about what you want to do in your head, but then you realise you are stuck in a forest so you better not waist your precious time";
         }
     }
+    /**sets player in random direction
+     * @param player is used to get distance traveled
+     * @param east is used to set east
+     * @param north is used to set north
+     * @param south is used to set south
+     * @param west is used to set west **/
     public static void RandomDirection(int north, int south, int east, int west,Player player){
         int random_number1 = rnd.nextInt(1,8);
         switch (random_number1){

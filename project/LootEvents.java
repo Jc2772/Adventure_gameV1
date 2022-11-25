@@ -2,9 +2,10 @@ package project;
 
 import javax.swing.*;
 import static project.Project.random;
-
+/**loot events**/
 public class LootEvents {
-    /**generates loot event of what loot you are going to get and changes weapon variable in player class**/
+    /**generates loot event of what loot you are going to get and changes weapon variable in player class
+     * @param player is used to update weapon and armor**/
     public void lootevents(Player player){
         double health = player.getHealth()
         ,weapon = player.getWeapon();

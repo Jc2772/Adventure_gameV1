@@ -1,5 +1,5 @@
 package project;
-
+/**class for player info**/
 
 public class Player {
     private String name;

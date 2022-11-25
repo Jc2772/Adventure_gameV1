@@ -2,10 +2,11 @@ package project;
 
 import javax.swing.*;
 import static project.Project.random;
+/**generic events**/
 public class GenericEvents {
     /**
-     * generates random events that add flavor to the game
-     */
+     generates random events that add flavor to the game
+     **/
     public void genericevents(){
         int eventCode = random.nextInt(1,10);
         switch (eventCode){

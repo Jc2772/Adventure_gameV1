@@ -8,7 +8,10 @@ import java.util.*;
 import java.io.*;
 
 @SuppressWarnings("ALL")
+
+/**main**/
 public class Project {
+
     public static Random random = new Random();
     private static int north = 0;
     private static int south = 0;
@@ -30,11 +33,12 @@ public class Project {
     static Player player;
 
     public static JFrame frame = new JFrame();
-
+    /**returns the text
+     * @return text**/
     public JLabel getText() {
         return text;
     }
-       //setup
+       /**setup**/
     public static void main(String[] args) {
 
         player = new Player();
@@ -60,26 +64,26 @@ public class Project {
         frame.setVisible(true);
         frame.add(gui.window);
     }
-
+    /**sets the corodinates of the player**/
     public static void setDirection(int north, int south, int east, int west) {
         Project.north = north;
         Project.south = south;
         Project.east = east;
         Project.west = west;
     }
-
+    /**gives north**/
     public static int getNorth() {
         return north;
     }
-
+    /**gives south**/
     public static int getSouth() {
         return south;
     }
-
+    /**gives east**/
     public static int getEast() {
         return east;
     }
-
+    /**gives west**/
     public static int getWest() {
         return west;
     }
@@ -126,15 +130,15 @@ public class Project {
 
                 System.exit(0);
             }
-
+            /**@noinspection ALL**/
             @Override
             public void windowClosed(WindowEvent e) {
             }
-
+            /**@noinspection ALL**/
             @Override
             public void windowIconified(WindowEvent e) {
             }
-
+            /**@noinspection ALL**/
             @Override
             public void windowDeiconified(WindowEvent e) {
             }
@@ -147,8 +151,9 @@ public class Project {
             public void windowDeactivated(WindowEvent e) {
             }
         });
-        //action listener for button aka meat of meat of the program
+
         enter.addActionListener(new ActionListener() {
+            /**action listener for button aka meat of meat of the program**/
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
                 if (north > northeastborder && east > northeastborder) {
@@ -182,7 +187,7 @@ public class Project {
                     frame.setVisible(true);
                 }
             }
-
+            /**generates events**/
             public void Events() {
                 int eventType = random.nextInt(1, 10);
                 if (eventType >= 1 && eventType <= 5) {
@@ -268,9 +273,10 @@ public class Project {
         return fontWithFallback instanceof FontUIResource ? fontWithFallback : new FontUIResource(fontWithFallback);
     }
 
-    /**
-     * @noinspection ALL
+    /*
+     noinspection ALL
      */
+    /**@noinspection ALL**/
     public JComponent $$$getRootComponent$$$() {
         return window;
     }

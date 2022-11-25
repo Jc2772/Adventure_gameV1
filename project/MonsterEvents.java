@@ -4,8 +4,10 @@ import java.awt.event.WindowEvent;
 
 import static project.Project.frame;
 import static project.Project.random;
+/**deals with monster events**/
 public class MonsterEvents {
-    /**this class is used to set the monster and allows you to deal with it**/
+    /**this class is used to set the monster and allows you to deal with it
+     * @param player **/
     public void monsterevents(Player player){
         double health = player.getHealth(),
         weapon = player.getWeapon();
