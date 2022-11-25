@@ -49,5 +49,8 @@ public class LootEvents {
             JOptionPane.showMessageDialog(null,steps.getText() + "\nyou found some well made spell armor, you take it");
             player.setHealth(250);
         }
+        else{
+            JOptionPane.showMessageDialog(null,steps.getText() + "\nyou found some loot but it is not up to standard with your other loot");
+        }
     }
 }

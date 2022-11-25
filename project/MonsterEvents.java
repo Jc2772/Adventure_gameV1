@@ -35,16 +35,17 @@ public class MonsterEvents {
         JOptionPane.showMessageDialog(null,steps.getText() + "\nYou have encountered a " + monsterName + ",You could try to run away from it and get lost in the woods or choose to risk your life");
         String battle_text = "";
         while(true) {
-            if (health <= 0) {
-                JOptionPane.showMessageDialog(null,"The " + monsterName + " has defeated you, You are Dead ");
-                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
-                return;
-            }
-            else if (monsHealth <= 0) {
+
+            if (monsHealth <= 0) {
                 JOptionPane.showMessageDialog(null,"You have defeated a " + monsterName + "You have Won");
                 int monKills = player.getMonKills();
                 monKills++;
                 player.setMonKills(monKills);
+                return;
+            }
+            else if (health <= 0) {
+                JOptionPane.showMessageDialog(null,"The " + monsterName + " has defeated you, You are Dead ");
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
                 return;
             }
             else{
